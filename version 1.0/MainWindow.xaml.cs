@@ -48,5 +48,5 @@ namespace patient_profile
         // Создание базы ответов на вопросы
         public static Dictionary<int, string> anket_base { get; set; } = new Dictionary<int, string>(100);
     }
-
+    
 }

@@ -10,7 +10,7 @@
 
     <Grid>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="18,397,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Content="Тренировка №1 (ЗАПУСК 1)" HorizontalAlignment="Left" Margin="18,36,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Тренировка №1 (ЗАПУСК 1)" HorizontalAlignment="Left" Margin="320,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
         <Label Content="Количество собранных фруктов" HorizontalAlignment="Left" Margin="18,78,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtNum" x:FieldModifier="private" HorizontalAlignment="Left" Height="23" Margin="224,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" TextChanged="txtNum_TextChanged"/>
         <Button x:Name="cmdUp" x:FieldModifier="private" Content="˄" HorizontalAlignment="Left" Margin="275,83,0,0" VerticalAlignment="Top" Width="12" Click="cmdUp_Click"/>

@@ -53,7 +53,6 @@ namespace patient_profile
         {
             InitializeComponent();
             txtNum.Text = _numValue.ToString();
-            WorkBase.anket_base[8] = txtNum.Text;
         }
 
         private void cmdUp_Click(object sender, RoutedEventArgs e)
@@ -77,7 +76,7 @@ namespace patient_profile
             {
                 txtNum.Text = _numValue.ToString();
             }
-
+            WorkBase.anket_base[9] = txtNum.Text;
         }
 
         //--------------------------------------------------------------------------------------------//
@@ -88,67 +87,67 @@ namespace patient_profile
         private void Sl_answer10_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer10.Value;
-            WorkBase.anket_base[9] = slider_value.ToString();
+            WorkBase.anket_base[10] = slider_value.ToString();
         }
 
         private void Sl_answer11_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer11.Value;
-            WorkBase.anket_base[10] = slider_value.ToString();
+            WorkBase.anket_base[11] = slider_value.ToString();
         }
 
         private void Sl_answer12_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer12.Value;
-            WorkBase.anket_base[11] = slider_value.ToString();
+            WorkBase.anket_base[12] = slider_value.ToString();
         }
 
         private void Sl_answer13_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer13.Value;
-            WorkBase.anket_base[12] = slider_value.ToString();
+            WorkBase.anket_base[13] = slider_value.ToString();
         }
 
         private void Sl_answer14_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer14.Value;
-            WorkBase.anket_base[13] = slider_value.ToString();
+            WorkBase.anket_base[14] = slider_value.ToString();
         }
 
         private void Sl_answer15_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer15.Value;
-            WorkBase.anket_base[14] = slider_value.ToString();
+            WorkBase.anket_base[15] = slider_value.ToString();
         }
 
         private void Sl_answer16_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer16.Value;
-            WorkBase.anket_base[15] = slider_value.ToString();
+            WorkBase.anket_base[16] = slider_value.ToString();
         }
 
         private void Sl_answer18_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer18.Value;
-            WorkBase.anket_base[17] = slider_value.ToString();
+            WorkBase.anket_base[18] = slider_value.ToString();
         }
 
         private void Sl_answer19_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             slider_value = (int)sl_answer19.Value;
-            WorkBase.anket_base[18] = slider_value.ToString();
+            WorkBase.anket_base[19] = slider_value.ToString();
         }
         //--------------------------------------------------------------------------------------------//
 
         //------------------------------- Обработка радиобаттонов -----------------------------------//
         private void Cb_answer17_1_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[16] = cb_answer17_1.Content.ToString();
+            WorkBase.anket_base[17] = cb_answer17_1.Content.ToString();
         }
 
         private void Cb_answer17_2_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[16] = cb_answer17_1.Content.ToString();
+            WorkBase.anket_base[17] = cb_answer17_1.Content.ToString();
         }
 
         //--------------------------------------------------------------------------------------------//
@@ -156,60 +155,60 @@ namespace patient_profile
         //---------------------------- Проверка на содержимое базы ответов ---------------------------//
         private void CheckBase()
         {
-            if (WorkBase.anket_base.ContainsKey(8))
-            {
-                txtNum.Text = WorkBase.anket_base[8];
-            }
-
             if (WorkBase.anket_base.ContainsKey(9))
             {
-                sl_answer10.Value = Convert.ToDouble(WorkBase.anket_base[9]);
+                txtNum.Text = WorkBase.anket_base[9];
             }
 
             if (WorkBase.anket_base.ContainsKey(10))
             {
-                sl_answer11.Value = Convert.ToDouble(WorkBase.anket_base[10]);
+                sl_answer10.Value = Convert.ToDouble(WorkBase.anket_base[10]);
             }
 
             if (WorkBase.anket_base.ContainsKey(11))
             {
-                sl_answer12.Value = Convert.ToDouble(WorkBase.anket_base[11]);
+                sl_answer11.Value = Convert.ToDouble(WorkBase.anket_base[11]);
             }
 
             if (WorkBase.anket_base.ContainsKey(12))
             {
-                sl_answer13.Value = Convert.ToDouble(WorkBase.anket_base[12]);
+                sl_answer12.Value = Convert.ToDouble(WorkBase.anket_base[12]);
             }
 
             if (WorkBase.anket_base.ContainsKey(13))
             {
-                sl_answer14.Value = Convert.ToDouble(WorkBase.anket_base[13]);
+                sl_answer13.Value = Convert.ToDouble(WorkBase.anket_base[13]);
             }
 
             if (WorkBase.anket_base.ContainsKey(14))
             {
-                sl_answer15.Value = Convert.ToDouble(WorkBase.anket_base[14]);
+                sl_answer14.Value = Convert.ToDouble(WorkBase.anket_base[14]);
             }
 
             if (WorkBase.anket_base.ContainsKey(15))
             {
-                sl_answer16.Value = Convert.ToDouble(WorkBase.anket_base[15]);
+                sl_answer15.Value = Convert.ToDouble(WorkBase.anket_base[15]);
             }
 
             if (WorkBase.anket_base.ContainsKey(16))
             {
-                if (WorkBase.anket_base[16] == "Да") { cb_answer17_1.IsChecked = true; }
-                if (WorkBase.anket_base[16] == "Нет") { cb_answer17_2.IsChecked = true; }
+                sl_answer16.Value = Convert.ToDouble(WorkBase.anket_base[16]);
             }
 
             if (WorkBase.anket_base.ContainsKey(17))
             {
-                sl_answer18.Value = Convert.ToDouble(WorkBase.anket_base[17]);
+                if (WorkBase.anket_base[17] == "Да") { cb_answer17_1.IsChecked = true; }
+                if (WorkBase.anket_base[17] == "Нет") { cb_answer17_2.IsChecked = true; }
             }
 
             if (WorkBase.anket_base.ContainsKey(18))
             {
-                sl_answer19.Value = Convert.ToDouble(WorkBase.anket_base[18]);
+                sl_answer18.Value = Convert.ToDouble(WorkBase.anket_base[18]);
+            }
+
+            if (WorkBase.anket_base.ContainsKey(19))
+            {
+                sl_answer19.Value = Convert.ToDouble(WorkBase.anket_base[19]);
             }
 
         }

@@ -32,32 +32,32 @@ namespace patient_profile
         //------------------------ Обработка радиобаттонов ----------------------------//
         private void Rb1_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[19] = cb_answer1_1.Content.ToString();
+            WorkBase.anket_base[20] = cb_answer1_1.Content.ToString();
         }
 
         private void Rb2_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[19] = cb_answer1_2.Content.ToString();
+            WorkBase.anket_base[20] = cb_answer1_2.Content.ToString();
         }
 
         private void Rb3_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[19] = cb_answer1_3.Content.ToString();
+            WorkBase.anket_base[20] = cb_answer1_3.Content.ToString();
         }
 
         private void Rb4_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[19] = cb_answer1_4.Content.ToString();
+            WorkBase.anket_base[20] = cb_answer1_4.Content.ToString();
         }
 
         private void Rb5_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[21] = cb_answer3_1.Content.ToString();
+            WorkBase.anket_base[22] = cb_answer3_1.Content.ToString();
         }
 
         private void Rb6_Checked(object sender, RoutedEventArgs e)
         {
-            WorkBase.anket_base[21] = cb_answer3_2.Content.ToString();
+            WorkBase.anket_base[22] = cb_answer3_2.Content.ToString();
         }
 
         //----------------------------------------------------------------------------//
@@ -68,7 +68,7 @@ namespace patient_profile
         private void Sl_answer_ValueChanged(object sender, RoutedEventArgs e)
         {
             slider_value = (int)sl_answer2_1.Value;
-            WorkBase.anket_base[20] = slider_value.ToString();
+            WorkBase.anket_base[21] = slider_value.ToString();
         }
 
         //----------------------------------------------------------------------------//
@@ -92,23 +92,23 @@ namespace patient_profile
         private void CheckBase()
         {
 
-            if (WorkBase.anket_base.ContainsKey(19))
-            {
-                if (WorkBase.anket_base[19] == "Отлично") { cb_answer1_1.IsChecked = true; }
-                if (WorkBase.anket_base[19] == "Хорошо") { cb_answer1_2.IsChecked = true; }
-                if (WorkBase.anket_base[19] == "Удовлетворительно") { cb_answer1_3.IsChecked = true; }
-                if (WorkBase.anket_base[19] == "Плохо") { cb_answer1_4.IsChecked = true; }
-            }
-
             if (WorkBase.anket_base.ContainsKey(20))
             {
-                sl_answer2_1.Value = Convert.ToDouble(WorkBase.anket_base[20]);
+                if (WorkBase.anket_base[20] == "Отлично") { cb_answer1_1.IsChecked = true; }
+                if (WorkBase.anket_base[20] == "Хорошо") { cb_answer1_2.IsChecked = true; }
+                if (WorkBase.anket_base[20] == "Удовлетворительно") { cb_answer1_3.IsChecked = true; }
+                if (WorkBase.anket_base[20] == "Плохо") { cb_answer1_4.IsChecked = true; }
             }
 
             if (WorkBase.anket_base.ContainsKey(21))
             {
-                if (WorkBase.anket_base[21] == "Зрительный образ") { cb_answer3_1.IsChecked = true; }
-                if (WorkBase.anket_base[21] == "Мышечное чувство") { cb_answer3_2.IsChecked = true; }
+                sl_answer2_1.Value = Convert.ToDouble(WorkBase.anket_base[21]);
+            }
+
+            if (WorkBase.anket_base.ContainsKey(22))
+            {
+                if (WorkBase.anket_base[22] == "Зрительный образ") { cb_answer3_1.IsChecked = true; }
+                if (WorkBase.anket_base[22] == "Мышечное чувство") { cb_answer3_2.IsChecked = true; }
             }
 
         }
@@ -126,7 +126,7 @@ namespace patient_profile
                 WorkBase.anket_base.Select(kv => new item() { id = kv.Key, value = kv.Value }).ToArray());
             }
         }
-
         //----------------------------------------------------------------------------//
+
     }
 }

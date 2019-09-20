@@ -68,21 +68,6 @@ namespace patient_profile
         //------------------------- Обработка конпки "Далее" -------------------------//
         private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
-            // Запись ответов в файл
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
-                {
-                    sw.WriteLine(WorkBase.anket_base[0]);
-                    sw.WriteLine(WorkBase.anket_base[1]);
-                }
-            }
-
-            catch (Exception)
-            {
-                MessageBox.Show("Ошибка при записи в файл!");
-            }
-
             // Привязка к странице 2 при нажатии кнопки "Далее"
             Page2 p2 = new Page2();
             this.NavigationService.Navigate(p2);
