@@ -1,0 +1,51 @@
+﻿<Page x:Class="patient_profile.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:patient_profile"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+    <Grid>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="18,397,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="Тренировка №1 (ЗАПУСК 1)" HorizontalAlignment="Left" Margin="18,36,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Количество собранных фруктов" HorizontalAlignment="Left" Margin="18,78,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNum" x:FieldModifier="private" HorizontalAlignment="Left" Height="23" Margin="224,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" TextChanged="txtNum_TextChanged"/>
+        <Button x:Name="cmdUp" x:FieldModifier="private" Content="˄" HorizontalAlignment="Left" Margin="275,83,0,0" VerticalAlignment="Top" Width="12" Click="cmdUp_Click"/>
+        <Button x:Name="cmdDown" x:FieldModifier="private" Content="˅" HorizontalAlignment="Left" Margin="290,83,0,0" VerticalAlignment="Top" Width="12" Click="cmdDown_Click"/>
+        <Label Content="Усталость" HorizontalAlignment="Left" Margin="428,80,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer10" HorizontalAlignment="Left" Margin="496,84,0,0" VerticalAlignment="Top" Width="236" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer10_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="737,81,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer10, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
+        <Label Content="Интенсивность кинестетических ощущений в левой руке" HorizontalAlignment="Left" Margin="13,128,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer11" HorizontalAlignment="Left" Margin="13,161,0,0" VerticalAlignment="Top" Width="362" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer11_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="345,131,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer11, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <Label Content="Интенсивность кинестетических ощущений в правой руке" HorizontalAlignment="Left" Margin="397,128,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer12" HorizontalAlignment="Left" Margin="397,161,0,0" VerticalAlignment="Top" Width="370" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer12_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="737,131,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer12, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <Label Content="Эмоции" HorizontalAlignment="Left" Margin="15,195,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer13" HorizontalAlignment="Left" Margin="9,221,0,0" VerticalAlignment="Top" Width="362" Minimum="-3" Maximum="3" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer13_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="85,199,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer13, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
+        <Label Content="Интерес" HorizontalAlignment="Left" Margin="393,196,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer14" HorizontalAlignment="Left" Margin="393,222,0,0" VerticalAlignment="Top" Width="370" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer14_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="461,198,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer14, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <Label Content="Сложность воображения движений для левой руки" HorizontalAlignment="Left" Margin="12,249,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer15" HorizontalAlignment="Left" Margin="12,282,0,0" VerticalAlignment="Top" Width="362" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer15_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="320,252,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer15, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <Label Content="Сложность воображения движений для правой руки" HorizontalAlignment="Left" Margin="396,249,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer16" HorizontalAlignment="Left" Margin="396,282,0,0" VerticalAlignment="Top" Width="370" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer16_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="716,252,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer16, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <RadioButton x:Name="cb_answer17_1" Content="Да" HorizontalAlignment="Left" Margin="22,351,0,0" VerticalAlignment="Top" Height="21" Checked="Cb_answer17_1_Checked"/>
+        <RadioButton x:Name="cb_answer17_2" Content="Нет" HorizontalAlignment="Left" Margin="100,351,0,0" VerticalAlignment="Top" Checked="Cb_answer17_2_Checked"/>
+        <Label Content="Был ли зрительный образ?" HorizontalAlignment="Left" Margin="17,320,0,0" VerticalAlignment="Top"/>
+        <Label Content="Интенсивность зрительного образа для левой руки" HorizontalAlignment="Left" Margin="190,320,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer18" HorizontalAlignment="Left" Margin="191,353,0,0" VerticalAlignment="Top" Width="254" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer18_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="445,348,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer18, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <Label Content="Интенсивность зрительного образа для правой руки" HorizontalAlignment="Left" Margin="491,320,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="sl_answer19" HorizontalAlignment="Left" Margin="496,353,0,0" VerticalAlignment="Top" Width="256" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer19_ValueChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="757,348,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer19, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
+        <Button x:Name="btnNext_p3" Content="Далее" HorizontalAlignment="Left" Margin="703,397,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_p3_Click"/>
+
+    </Grid>
+</Page>
