@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
+using MySql.Data.MySqlClient;
 
 namespace patient_profile
 {
@@ -23,6 +24,8 @@ namespace patient_profile
     public partial class PageFinal : Page
     {
         int slider_value;                   // Переменная для хранения значения слайдера
+		string sql;                         // Запрос SQL
+
         public PageFinal()
         {
             InitializeComponent();
@@ -126,6 +129,48 @@ namespace patient_profile
                 WorkBase.anket_base.Select(kv => new item() { id = kv.Key, value = kv.Value }).ToArray());
             }
         }
+
+        //----------------------------------------------------------------------------//
+
+		//------------------------ Запись ответов в базу данных MySQL ---------------------------------//
+		private void WriteAnswersToSQL()
+        {
+
+            try
+            {
+                string connStr = "server=localhost; user=root; database=patient_profile_base; password=2145635;";
+
+                MySqlConnection conn = new MySqlConnection(connStr);
+
+                conn.Open();
+
+                sql = "UPDATE answer_base SET answer = '" + WorkBase.anket_base[0] + "' WHERE id = " + 1;
+
+                for (int i = 1; i <= WorkBase.anket_base.Count; i++)
+                {
+                    MySqlCommand command = new MySqlCommand(sql, conn);
+                    sql = "UPDATE answer_base SET answer = '" + WorkBase.anket_base[i - 1] + "' WHERE id = " + i;
+                    command.ExecuteNonQuery();
+                }
+
+                conn.Close();
+            }
+
+            catch
+            {
+                MessageBox.Show("Ошибка подключения к базе данных!");
+            }
+
+
+        }
+
+        //----------------------------------------------------------------------------//
+
+        private void Btn_SendToSQL_Click(object sender, RoutedEventArgs e)
+        {
+            WriteAnswersToSQL();
+        }
+
         //----------------------------------------------------------------------------//
 
     }

@@ -37,5 +37,6 @@
         <Button Content="Назад" HorizontalAlignment="Left" Margin="18,397,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Button x:Name="btnSave" Content="Сохранить в XML" HorizontalAlignment="Left" Margin="130,397,0,0" VerticalAlignment="Top" Width="124" Click="BtnSave_Click"/>
         <Label Content="Состояние после тренировок" HorizontalAlignment="Left" Margin="287,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="btn_SendToSQL" Content="Сохранить в базе данных" HorizontalAlignment="Left" Margin="282,397,0,0" VerticalAlignment="Top" Width="162" Click="Btn_SendToSQL_Click"/>
     </Grid>
 </Page>

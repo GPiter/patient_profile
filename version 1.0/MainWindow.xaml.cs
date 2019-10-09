@@ -26,9 +26,19 @@ namespace patient_profile
         {
             InitializeComponent();
 
+            dictionaryFilling(); // Инициализация словаря начальными значениями
+
             // Открытие приложения со страницы 1
             Page1 p1 = new Page1(); 
             MainFrame.NavigationService.Navigate(p1);
+        }
+
+        private void dictionaryFilling()
+        {
+            for (int i = 0; i <= WorkBase.size; i++)
+            {
+                WorkBase.anket_base.Add(i, "0");
+            }
         }
 
     }
@@ -45,8 +55,9 @@ namespace patient_profile
     [Serializable]
     public static class WorkBase
     {
+        public static int size = 100;
         // Создание базы ответов на вопросы
-        public static Dictionary<int, string> anket_base { get; set; } = new Dictionary<int, string>(100);
+        public static Dictionary<int, string> anket_base { get; set; } = new Dictionary<int, string>(size);
     }
-    
+
 }

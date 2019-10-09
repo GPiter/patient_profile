@@ -22,7 +22,6 @@ namespace patient_profile
     public partial class Page1 : Page
     {
         int slider_value;                   // Переменная для хранения значения слайдера
-        string writePath = @"D:\test.txt";  // Директория записи в файл
 
         public Page1()
         {
