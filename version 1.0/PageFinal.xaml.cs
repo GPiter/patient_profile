@@ -138,7 +138,7 @@ namespace patient_profile
 
             try
             {
-                string connStr = "server=localhost; user=root; database=patient_profile_base; password=2145635;";
+                string connStr = "server=localhost; user=root; database=patient_profile_base; password=0000;";
 
                 MySqlConnection conn = new MySqlConnection(connStr);
 
