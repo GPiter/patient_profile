@@ -26,10 +26,16 @@ namespace patient_profile
         int slider_value;                   // Переменная для хранения значения слайдера
 		string sql;                         // Запрос SQL
 
+        // Параметры подключения к базе данных
+        string connectString = " server    = localhost; "             +
+                               " user      = root; "                  +
+                               " database  = patient_profile_base; "  +
+                               " password  = 0000; ";
+
         public PageFinal()
         {
             InitializeComponent();
-            CheckBase(); // Проверка базы ответов на введенные данные
+            CheckBase();                   // Проверка базы ответов на введенные данные
         }
 
         //------------------------ Обработка радиобаттонов ----------------------------//
@@ -128,6 +134,7 @@ namespace patient_profile
                 serializer.Serialize(fs,
                 WorkBase.anket_base.Select(kv => new item() { id = kv.Key, value = kv.Value }).ToArray());
             }
+            MessageBox.Show("Запись ответов в XML прошла успешно!");
         }
 
         //----------------------------------------------------------------------------//
@@ -135,25 +142,37 @@ namespace patient_profile
 		//------------------------ Запись ответов в базу данных MySQL ---------------------------------//
 		private void WriteAnswersToSQL()
         {
+            bool sql_request_isTrue;    // Флаг на наличие данных в поле таблицы "answer"
 
             try
             {
-                string connStr = "server=localhost; user=root; database=patient_profile_base; password=0000;";
+                MySqlConnection connection = new MySqlConnection(connectString);    // Создание подключения к БД MySQL
 
-                MySqlConnection conn = new MySqlConnection(connStr);
+                connection.Open();
 
-                conn.Open();
-
-                sql = "UPDATE answer_base SET answer = '" + WorkBase.anket_base[0] + "' WHERE id = " + 1;
-
-                for (int i = 1; i <= WorkBase.anket_base.Count; i++)
+                for (int i = 1; i < WorkBase.anket_base.Count; i++)
                 {
-                    MySqlCommand command = new MySqlCommand(sql, conn);
-                    sql = "UPDATE answer_base SET answer = '" + WorkBase.anket_base[i - 1] + "' WHERE id = " + i;
-                    command.ExecuteNonQuery();
+                    sql = "SELECT EXISTS(SELECT id FROM answer_base WHERE id = " + i + ")"; // Запрос, содержит ли поле в таблице БД значение
+                    MySqlCommand cmd_take_request = new MySqlCommand(sql, connection);
+                    sql_request_isTrue = Convert.ToBoolean(cmd_take_request.ExecuteScalar());
+
+                    if (sql_request_isTrue)
+                    {
+                        sql = "UPDATE answer_base SET answer = '" + WorkBase.anket_base[i - 1] + "' WHERE id = " + i;   // Если значение в таблице есть, обновляем его
+                        MySqlCommand command = new MySqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        sql = "INSERT INTO answer_base (id, answer) VALUES(" + i + "," + WorkBase.anket_base[i - 1] + ")";  // Если значения в таблице нет, добавляем
+                        MySqlCommand command = new MySqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                    }
+
                 }
 
-                conn.Close();
+                connection.Close();
+                MessageBox.Show("Запись ответов в базу данных прошла успешно!");
             }
 
             catch
