@@ -26,7 +26,8 @@ namespace patient_profile
         {
             InitializeComponent();
 
-            dictionaryFilling(); // Инициализация словаря начальными значениями
+            dictionaryFilling();  // Инициализация коллекции anket_base
+            answerNotesFilling(); // Инициализация коллекции answer_notes
 
             // Открытие приложения со страницы 1
             Page1 p1 = new Page1(); 
@@ -41,6 +42,14 @@ namespace patient_profile
             }
         }
 
+        private void answerNotesFilling()
+        {
+            for (int i = 0; i <= WorkBase.size; i++)
+            {
+                WorkBase.answer_notes.Add(i, "-");
+            }
+        }
+
     }
 
     public class item
@@ -48,16 +57,20 @@ namespace patient_profile
         [XmlAttribute]
         public int id;
         [XmlAttribute]
-        public string value;
-
+        public string answer;
+        [XmlAttribute]
+        public string notes;
     }
 
     [Serializable]
     public static class WorkBase
     {
-        public static int size = 100;
+        public static int size = 30;
         // Создание базы ответов на вопросы
         public static Dictionary<int, string> anket_base { get; set; } = new Dictionary<int, string>(size);
+
+        // Создание базы для примечаний
+        public static Dictionary<int, string> answer_notes { get; set; } = new Dictionary<int, string>(size);
     }
 
 }

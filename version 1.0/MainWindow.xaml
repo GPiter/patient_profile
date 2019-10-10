@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:patient_profile"
         mc:Ignorable="d"
-        Title="Анкетирование пациента" Height="470" Width="820">
+        Title="Анкетирование пациента" Height="870" Width="820">
     <Grid>
-        <Frame x:Name="MainFrame" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="790" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="MainFrame" HorizontalAlignment="Left" Height="850" VerticalAlignment="Top" Width="790" NavigationUIVisibility="Hidden" Margin="0,0,0,-160"/>
     </Grid>
 </Window>
