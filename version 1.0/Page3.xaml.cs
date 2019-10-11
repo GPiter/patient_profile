@@ -152,9 +152,68 @@ namespace patient_profile
 
         //--------------------------------------------------------------------------------------------//
 
+        //------------------------------ Обработка полей "Примечания" --------------------------------//
+        private void Note_answer10_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[9] = note_answer10.Text;
+        }
+
+        private void Note_answer11_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[10] = note_answer11.Text;
+        }
+
+        private void Note_answer12_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[11] = note_answer12.Text;
+        }
+
+        private void Note_answer13_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[12] = note_answer13.Text;
+        }
+
+        private void Note_answer14_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[13] = note_answer14.Text;
+        }
+
+        private void Note_answer15_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[14] = note_answer15.Text;
+        }
+
+        private void Note_answer16_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[15] = note_answer16.Text;
+        }
+
+        private void Note_answer17_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[16] = note_answer17.Text;
+        }
+
+        private void Note_answer18_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[17] = note_answer18.Text;
+        }
+
+        private void Note_answer19_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[18] = note_answer19.Text;
+        }
+
+        private void Note_answer20_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            WorkBase.answer_notes[19] = note_answer20.Text;
+        }
+
+        //-------------------------------------------------------------------------------------------//
+
         //---------------------------- Проверка на содержимое базы ответов ---------------------------//
         private void CheckBase()
         {
+            // Проверка на заполнение ответов на вопросы
             if (WorkBase.anket_base.ContainsKey(9))
             {
                 txtNum.Text = WorkBase.anket_base[9];
@@ -209,6 +268,62 @@ namespace patient_profile
             if (WorkBase.anket_base.ContainsKey(19))
             {
                 sl_answer19.Value = Convert.ToDouble(WorkBase.anket_base[19]);
+            }
+
+            // Проверка на заполнение примечаний
+            if (WorkBase.answer_notes.ContainsKey(9))
+            {
+                note_answer10.Text = WorkBase.answer_notes[9];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(10))
+            {
+                note_answer11.Text = WorkBase.answer_notes[10];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(11))
+            {
+                note_answer12.Text = WorkBase.answer_notes[11];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(12))
+            {
+                note_answer13.Text = WorkBase.answer_notes[12];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(13))
+            {
+                note_answer14.Text = WorkBase.answer_notes[13];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(14))
+            {
+                note_answer15.Text = WorkBase.answer_notes[14];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(15))
+            {
+                note_answer16.Text = WorkBase.answer_notes[15];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(16))
+            {
+                note_answer17.Text = WorkBase.answer_notes[16];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(17))
+            {
+                note_answer18.Text = WorkBase.answer_notes[17];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(18))
+            {
+                note_answer19.Text = WorkBase.answer_notes[18];
+            }
+
+            if (WorkBase.answer_notes.ContainsKey(19))
+            {
+                note_answer20.Text = WorkBase.answer_notes[19];
             }
 
         }

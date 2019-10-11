@@ -126,13 +126,13 @@ namespace patient_profile
 
         private void WriteAnketBaseToXML()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(item[]),
-            new XmlRootAttribute() { ElementName = "items" });
+            XmlSerializer serializer = new XmlSerializer(typeof(item[]), new XmlRootAttribute() { ElementName = "items" } );
+            XmlSerializer serialize_notes = new XmlSerializer(typeof(Note[]), new XmlRootAttribute() { ElementName = "notes" });
 
             using (FileStream fs = new FileStream("anket_answers.xml", FileMode.OpenOrCreate))
             {
-                serializer.Serialize(fs,
-                WorkBase.anket_base.Select(kv => new item() { id = kv.Key, value = kv.Value }).ToArray());
+                serializer.Serialize(fs, WorkBase.anket_base.Select(kv => new item() { id = kv.Key, answer = kv.Value } ).ToArray());
+                serialize_notes.Serialize(fs, WorkBase.answer_notes.Select(kv => new Note() { id = kv.Key, notes = kv.Value }).ToArray());
             }
             MessageBox.Show("Запись ответов в XML прошла успешно!");
         }

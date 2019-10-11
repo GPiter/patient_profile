@@ -33,13 +33,13 @@
         <Slider x:Name="sl_answer9" HorizontalAlignment="Left" Margin="40,596,0,0" VerticalAlignment="Top" Width="366" Minimum="0" Maximum="10" Value="0" IsSnapToTickEnabled="True" TickFrequency="1" TickPlacement="BottomRight" ValueChanged="Sl_answer9_ValueChanged"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="376,567,0,0" TextWrapping="Wrap" Text="{Binding Value, ElementName=sl_answer9, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" RenderTransformOrigin="10.395,0.557"/>
         <Button x:Name="btnNext_p2" Content="Далее" HorizontalAlignment="Left" Margin="700,800,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_p2_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="461,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
+        <TextBox x:Name="note_answer3" HorizontalAlignment="Left" Height="30" Margin="461,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer3_TextChanged"/>
+        <TextBox x:Name="note_answer4" HorizontalAlignment="Left" Height="30" Margin="461,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer4_TextChanged"/>
+        <TextBox x:Name="note_answer5" HorizontalAlignment="Left" Height="30" Margin="461,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer5_TextChanged"/>
+        <TextBox x:Name="note_answer6" HorizontalAlignment="Left" Height="30" Margin="461,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer6_TextChanged"/>
+        <TextBox x:Name="note_answer7" HorizontalAlignment="Left" Height="30" Margin="461,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer7_TextChanged"/>
+        <TextBox x:Name="note_answer8" HorizontalAlignment="Left" Height="30" Margin="461,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer8_TextChanged"/>
+        <TextBox x:Name="note_answer9" HorizontalAlignment="Left" Height="30" Margin="461,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" TextChanged="Note_answer9_TextChanged"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="485" Margin="448,133,0,0" VerticalAlignment="Top" Width="296"/>
         <Label Content="Примечания" HorizontalAlignment="Left" Margin="556,109,0,0" VerticalAlignment="Top"/>
     </Grid>
