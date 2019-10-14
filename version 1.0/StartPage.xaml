@@ -1,0 +1,21 @@
+﻿<Page x:Class="patient_profile.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:patient_profile"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="800"
+      Title="StartPage">
+
+    <Grid>
+        <Label Content="Идентификатор пациента:" HorizontalAlignment="Left" Margin="203,140,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnNext" Content="Далее" HorizontalAlignment="Left" Margin="680,450,0,-22" VerticalAlignment="Top" Width="75" Click="BtnNext_Click"/>
+        <Label Content="Авторизация пациента" HorizontalAlignment="Left" Margin="320,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <DatePicker x:Name="dp_calendar" HorizontalAlignment="Left" Margin="368,204,0,0" VerticalAlignment="Top" Width="120" IsTodayHighlighted="True" SelectedDateChanged="Dp_Date_SelectedDateChanged"/>
+        <TextBox x:Name="txtbox_Identifier" HorizontalAlignment="Left" Height="22" Margin="368,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" />
+        <Label Content="Дата визита:" HorizontalAlignment="Left" Margin="278,202,0,0" VerticalAlignment="Top"/>
+        <Label Content="Номер визита:" HorizontalAlignment="Left" Margin="265,264,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbox_Number_visit" HorizontalAlignment="Left" Height="22" Margin="368,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Txtbox_Number_visit_TextChanged" />
+    </Grid>
+</Page>

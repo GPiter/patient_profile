@@ -35,5 +35,6 @@
         <Button x:Name="btnNext" Content="Далее" HorizontalAlignment="Left" Margin="680,450,0,0" VerticalAlignment="Top" Width="75" Click="BtnNext_Click" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="276,287,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sl_answer2_1, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30" Grid.ColumnSpan="2"/>
         <Label Content="Состояние до тренировок" HorizontalAlignment="Left" Margin="320,25,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnBack" Content="Назад" HorizontalAlignment="Left" Margin="20,450,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="BtnBack_Click" />
     </Grid>
 </Page>

@@ -21,7 +21,7 @@ namespace patient_profile
     /// </summary>
     public partial class Page1 : Page
     {
-        int slider_value;                   // Переменная для хранения значения слайдера
+        int slider_value; // Поле для хранения значения слайдера
 
         public Page1()
         {
@@ -90,6 +90,12 @@ namespace patient_profile
             {
                 sl_answer2_1.Value = Convert.ToDouble(WorkBase.anket_base[1]);
             }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            StartPage spage = new StartPage();
+            this.NavigationService.Navigate(spage);
         }
 
         //----------------------------------------------------------------------------//

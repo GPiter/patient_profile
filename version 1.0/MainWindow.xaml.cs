@@ -30,8 +30,8 @@ namespace patient_profile
             answerNotesFilling(); // Инициализация коллекции answer_notes
 
             // Открытие приложения со страницы 1
-            Page1 p1 = new Page1(); 
-            MainFrame.NavigationService.Navigate(p1);
+            StartPage spage = new StartPage();
+            MainFrame.NavigationService.Navigate(spage);
         }
 
         private void dictionaryFilling()
@@ -58,6 +58,13 @@ namespace patient_profile
         public int id;
         [XmlAttribute]
         public string answer;
+
+    }
+
+    public class Note
+    {
+        [XmlAttribute]
+        public int id;
         [XmlAttribute]
         public string notes;
     }
@@ -71,6 +78,13 @@ namespace patient_profile
 
         // Создание базы для примечаний
         public static Dictionary<int, string> answer_notes { get; set; } = new Dictionary<int, string>(size);
+    }
+
+    public static class Patient
+    {
+        public static String identifier = "-";
+        public static String visit_date = DateTime.Now.ToString();
+        public static String visit_number = "-";
     }
 
 }

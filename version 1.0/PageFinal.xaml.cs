@@ -23,14 +23,14 @@ namespace patient_profile
     /// </summary>
     public partial class PageFinal : Page
     {
-        int slider_value;                   // Переменная для хранения значения слайдера
-		string sql;                         // Запрос SQL
+        int slider_value; // Поле для хранения значения слайдера
+		string sql;       // Запрос SQL
 
         // Параметры подключения к базе данных
         string connectString = " server    = localhost; "             +
                                " user      = root; "                  +
                                " database  = patient_profile_base; "  +
-                               " password  = 0000; ";
+                               " password  = 2145635; ";
 
         public PageFinal()
         {
@@ -168,7 +168,7 @@ namespace patient_profile
                         MySqlCommand command = new MySqlCommand(sql, connection);
                         command.ExecuteNonQuery();
                     }
-
+                    
                 }
 
                 connection.Close();

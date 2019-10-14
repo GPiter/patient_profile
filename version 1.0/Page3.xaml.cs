@@ -20,7 +20,7 @@ namespace patient_profile
     /// </summary>
     public partial class Page3 : Page
     {
-        int slider_value;                   // Переменная для хранения значения слайдера
+        int slider_value; // Поле для хранения значения слайдера
 
         public Page3()
         {
