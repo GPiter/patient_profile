@@ -34,6 +34,7 @@ namespace patient_profile
             MainFrame.NavigationService.Navigate(spage);
         }
 
+        // Заполнение коллекций начальными значениями
         private void dictionaryFilling()
         {
             for (int i = 0; i <= WorkBase.size; i++)
